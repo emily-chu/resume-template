@@ -1,0 +1,46 @@
+% Resume template by Emily Chu
+% may i please have a star im dying https://github.com/emily-chu/resume-template
+
+% compile here!!!
+% !TEX program = xelatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Toggle pages and co-op header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CoverLetterToggle}{1}
+\newcommand{\ResumeToggle}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{resume-class}
+
+\newcommand{\MainHeaderWidth}{
+    1
+}
+
+\newcommand{\TopRow}{
+  % \begin{minipage}[t]{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth}
+  \begin{minipage}[t]{\dimexpr\MainHeaderWidth\linewidth-6\tabcolsep-4\arrayrulewidth}
+    \raggedright
+    \vspace{4\tabcolsep}%
+    \BigName{Emily Chu}\hfill\\%
+    \vspace{4pt}%
+    \mbox{%
+      \LittleLink{mailto:hello@example.com}            {\faIcon{envelope-square}  \ hello@example.com}
+      \LittleLink{http://example.com}                  {\faIcon{share-alt-square} \ Website}
+      \                                                 \faIcon{phone-square-alt} \ 000-000-0000 \ 
+      \LittleLink{https://github.com/emily-chu/}       {\faIcon{github-square}    \ GitHub}
+      \LittleLink{https://www.linkedin.com}            {\faIcon{linkedin}         \ Linkedin}
+    }\hfill%
+    \vspace{2\tabcolsep}%
+  \end{minipage}%
+}%
+
+% This is where you comment things out if you only want one of the two pages
+\begin{document}
+  \if\CoverLetterToggle1%
+    \input{coverletter}%
+  \fi
+  \if\ResumeToggle1%
+    \input{resume}%
+  \fi
+\end{document}

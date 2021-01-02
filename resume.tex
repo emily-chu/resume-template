@@ -1,0 +1,187 @@
+% !TEX program = xelatex
+% \documentclass[]{resume-class}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Individual sections 
+% (Experience, projects, skills...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ExperienceSection}{
+  \section{Work Experience}
+
+  \SubsectionPlus{Company Number One}{Oct 2017 - Jan 2020}
+  \Detail{Employee co-worker}
+  \begin{itemize}
+    \item Enjoyed the pleasant and welcoming atmosphere provided by the lovely family running the business
+    \item Repeatedly convinced co-worker to arrive on time
+  \end{itemize}
+
+  \SubsectionPlus{Another Company}{Mar 2017 \& Mar 2018}
+  \Detail{Poop scooper}
+  \begin{itemize}
+    \item Handled weather-related difficulties, which were surprisingly some of the biggest difficulties in this position
+    \item Brought vinyl gloves to be used over everyone's winter gloves
+    \item Felt like working at a daycare, as a P.E. teacher, and as a customer service rep
+    \item Held no regrets– it was a rewarding job, and one of my first
+  \end{itemize}
+
+  \SubsectionPlus{The Third Company}{May 2017 - Sep 2017}
+  \Detail{This one's obvious enough to not need bullet points}
+}
+
+\newcommand{\ExperienceTwoElectricBoogaloo}{
+  \section{Other Experience}
+
+  \SubsectionPlus{A not-for-profit organization}{Apr 2017 - Jun 2019}
+  \Detail{Jack of all trades}
+  \begin{itemize}
+    \item Appreciated how unwasteful the organization was
+    \item Was impressed by the sheer amount of soda consumed each day by a fellow volunteer
+  \end{itemize}
+
+  \SubsectionPlus{Some competition}{Jan 2018 - Jun 2018}
+  \Detail{Scared highschool kid}
+  \begin{itemize}
+    \item Bombarded mentors with university questions that would usually be answered by an older sibling, if I had one
+    \item Still curious about which UBC room we presented in for the semifinals, despite actually attending UBC now
+    \item Sat in office chairs possibly worth more than anything I owned
+  \end{itemize}
+}
+
+\newcommand{\ProjectsSection}{
+  \section{Technical Projects}
+  \SubsectionPlus{Project made during the lockdown}{Aug 2020 - Present}
+  \Detail{App that does X}
+  \begin{itemize}
+    \item Leveraged imposter syndrome and googling skills
+    \item Got stuck in tutorial hell, but escaped early
+    \item Made my most advanced and least chaotic project yet
+  \end{itemize}
+
+  \SubsectionPlus{Pre-covid hackathon project}{Mar 2020 - Aug 2020}
+  \Detail{App that does Y}
+  \begin{itemize}
+    \item Gained the imposter syndrome mentioned in the above project
+    \item Linked arms with a groupmate at 3 AM and shuffled around the hall to say hi to all the participants we knew
+    \item Slept from 4 – 5 AM on a row of four chairs
+    \item Had the most fun two days of that whole semester
+  \end{itemize}
+
+  \SubsectionPlus{A class project}{Jan 2020 - Apr 2020}
+  \Detail{App that does Z}
+  \begin{itemize}
+    \item Recieved a taste of writing code without an answer key
+    \item Pulled a few all-nighters over the course of the project
+    \item Enjoyed the hilarious conversations between sleep-deprived students working on similar projects
+  \end{itemize}
+}
+
+\newcommand{\educationSection}{
+  \section{Education}
+  \SubsectionPlus{The University of British Columbia}{}
+  \Detail{Combined Major in Business and Computer Science}
+  \Date{Sep 2019 - (expected) May 2100}
+  \vspace{0.75\tabcolsep}
+  \begin{itemize}
+    \item -10\% avg
+    \item Involvement one
+    \item Another involvement
+    \item The third involvement
+  \end{itemize}
+}
+
+\newcommand{\SkillsSection}{
+  \section{skills}
+
+  \SubsectionPlus{Languages}{}
+  \begin{itemize}
+    \item HTML \& CSS
+    \item JavaScript
+    \item C/C++
+    \item Java
+    \item Python
+    \item R
+  \end{itemize}
+
+  \SubsectionPlus{Technologies}{}
+  \begin{itemize}
+    \item Node.js
+    \item React
+    \item Git/GitHub
+    \item VSCode \& IntelliJ
+    \item Bootstrap
+    \item Photoshop \& Illustrator
+    \item \LaTeX
+  \end{itemize}
+}
+
+\newcommand{\AchievementsSection}{
+  \section{Achievements}
+  Unexpected award
+  \\ \Date{Jan 2020}\vspace{0.75\tabcolsep}
+  \\ I actually applied to this award
+  \\ \Date{Jun 2019}\vspace{0.75\tabcolsep}
+  \\ Award recieved during a phone call on a bus
+  \\ \Date{Jun 2018}
+}
+
+\newcommand{\HobbiesSection}{
+  \section{Other interests}
+  {
+    \linespread{1.2}\selectfont
+    Graphic design
+    \\Going outside
+    \\Being well rounded
+    \\\Date{See, I'm not a total code monkey}
+    \\Making this column longer
+    \\
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main two boxes of resume 
+% (left col, right col)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\LeftCol}{
+  \begin{minipage}[t]{\dimexpr\linewidth-2\tabcolsep}%spacing from line
+    \ProjectsSection
+    \ExperienceSection
+    \ExperienceTwoElectricBoogaloo
+  \end{minipage}
+} 
+
+\newcommand{\RightCol}{
+  \hspace{1\tabcolsep}
+  \begin{minipage}[t][\MagicVFill]{\dimexpr\linewidth-2\tabcolsep}
+    \educationSection
+    \SkillsSection
+    \AchievementsSection
+    \HobbiesSection
+    \vfill
+    \Sneaky{Last updated: \today.}%
+    \Sneaky{If you found this– Hello! :)}%
+  \end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Resume document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\arrayrulecolor{RightTheme}
+\begin{tabular}{
+  % 5 cols: empty, left, empty, right, empty
+  % -> 10 tabcolseps and 6 arrayrules taking up horizontal space, so left and right must each compensate for half
+  % *** Currently unsure why 1.5 arrayrulewidths works (and not 3), but it fits perfectly
+  % \center
+  p{\dimexpr0pt}%
+  p{\dimexpr.65\linewidth-5\tabcolsep-1.5\arrayrulewidth}% Left width
+  p{\dimexpr0pt}%
+  p{\dimexpr.35\linewidth-5\tabcolsep-1.5\arrayrulewidth}% Right width
+  p{\dimexpr0pt}%
+}
+  % Table and strange borders create the line art
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} & \multicolumn{3}{l}{\TopRow} & \\ \cline{2-5}
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} & & \multicolumn{1}{  l |}{} &    & \\ \arrayrulecolor{LeftTheme}\cline{1-4}
+  & \LeftCol & \multicolumn{1}{| l !{\color{RightTheme}\vline}}{} & \RightCol & \\
+  &            & \multicolumn{1}{| l                             }{} &             & \\
+\end{tabular}%
+% \end{document}

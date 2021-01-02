@@ -1,0 +1,59 @@
+% !TEX program = xelatex
+% \documentclass[]{resume-class}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Skill-specific interchangable paragraphs 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cover letter document
+% (and application-specific things)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CoverLetterContents}{
+  \begin{minipage}[t][\MagicVFill]{\dimexpr1\linewidth-6\tabcolsep-2\arrayrulewidth}
+    \centering % Double minipage to ensure big margins
+    \begin{minipage}[t]{\dimexpr\linewidth-16\tabcolsep}
+      \raggedright {
+        \linespread{1.2}\selectfont
+
+        \vspace{8\tabcolsep}
+            \today
+        \vspace{4\tabcolsep}
+            \\Company co.
+            \\A place
+            \\A postal code
+        \\\vspace{8\tabcolsep}
+            Dear Hiring Manager,
+        \\\vspace{4\tabcolsep}
+            Re: Cover Letter Template
+        \\\vspace{2\tabcolsep}
+            If you recieved my real resume and find yourself here, you might enjoy taking a peek at this resume, too. Or, if you're someone like me, feel free to use this resume template (see notes in the README).
+        \\\vspace{2\tabcolsep}
+            I've already spent an hour filling my fake resume with text. I don't plan to write much more for this cover letter. Here comes the lorem ipsum...
+        \\\vspace{2\tabcolsep}
+            \lipsum[1-2]
+        \vspace{2\tabcolsep}
+            \\Sincerely,
+        \\\vspace{2\tabcolsep}
+            Emily Chu
+            % \vspace*{\fill}
+      }
+    \end{minipage}
+  \end{minipage}
+}
+
+% \begin{document}
+\arrayrulecolor{LeftTheme}
+\begin{tabular}{
+  | p{\dimexpr0pt}%
+    p{\dimexpr1\linewidth-6\tabcolsep-1\arrayrulewidth}% Main col
+    p{\dimexpr0pt}%
+}
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} & \multicolumn{1}{l}{\TopRow} &  \\ \arrayrulecolor{RightTheme}\cline{2-3}
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} & \multicolumn{1}{!{\color{RightTheme}\vline} l}{} &  \\ \arrayrulecolor{LeftTheme}\cline{1-2}
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} & \multicolumn{1}{!{\color{RightTheme}\vline} l}{\CoverLetterContents} &  \\ 
+  \multicolumn{1}{!{\color{LeftTheme}\vline} l}{} &  &  \\ 
+\end{tabular}
+% \end{document}
